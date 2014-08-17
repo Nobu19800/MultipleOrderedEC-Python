@@ -1,4 +1,4 @@
-# -*- coding: cp932 -*-
+# -*- coding: utf-8 -*-
 import struct
 import OpenRTM_aist
 import os.path
@@ -8,7 +8,7 @@ import imp
 
 
 ##
-#ÀsğŒ‚ÌƒNƒ‰ƒX
+#å®Ÿè¡Œæ¡ä»¶ã®ã‚¯ãƒ©ã‚¹
 ##
 class add_Rule:
     def __init__(self):
@@ -16,7 +16,7 @@ class add_Rule:
         self.name = ""
         self.r = None
 ##
-#’¼—ñƒuƒƒbƒN‚ÌƒNƒ‰ƒX
+#ç›´åˆ—ãƒ–ãƒ­ãƒƒã‚¯ã®ã‚¯ãƒ©ã‚¹
 ##
 class sub_Rule:
     def __init__(self):
@@ -24,20 +24,20 @@ class sub_Rule:
         self.r = None
         self.s = 0
 ##
-#•À—ñƒuƒƒbƒN‚ÌƒNƒ‰ƒX
+#ä¸¦åˆ—ãƒ–ãƒ­ãƒƒã‚¯ã®ã‚¯ãƒ©ã‚¹
 ##
 class Rule:
     def __init__(self):
         self.SR = []
 ##
-#Às‡˜‚ÌƒNƒ‰ƒX
+#å®Ÿè¡Œé †åºã®ã‚¯ãƒ©ã‚¹
 ##
 class main_Rule:
     def __init__(self):
         self.rs = []
         self.ar = []
 ##
-#ƒoƒCƒiƒŠƒtƒ@ƒCƒ‹‚æ‚è•¶š“Ç‚İ‚İ‚·‚éŠÖ”
+#ãƒã‚¤ãƒŠãƒªãƒ•ã‚¡ã‚¤ãƒ«ã‚ˆã‚Šæ–‡å­—èª­ã¿è¾¼ã¿ã™ã‚‹é–¢æ•°
 ##
 def ReadString(ifs):
     s = struct.unpack("i",ifs.read(4))[0]
@@ -45,7 +45,7 @@ def ReadString(ifs):
 
     return a
 ##
-#ƒoƒCƒiƒŠƒtƒ@ƒCƒ‹‚É•¶š•Û‘¶‚·‚éŠÖ”
+#ãƒã‚¤ãƒŠãƒªãƒ•ã‚¡ã‚¤ãƒ«ã«æ–‡å­—ä¿å­˜ã™ã‚‹é–¢æ•°
 ##
 def WriteString(a, ofs):
     
@@ -57,7 +57,7 @@ def WriteString(a, ofs):
     
     ofs.write(a2)
 ##
-#ƒeƒLƒXƒgƒtƒ@ƒCƒ‹‚©‚ç‚ÌÀs‡˜“Ç‚İ‚ŞŠÖ”
+#ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã®å®Ÿè¡Œé †åºèª­ã¿è¾¼ã‚€é–¢æ•°
 ##
 def LoadSRule(cs, nm, r):
     
@@ -135,7 +135,7 @@ def LoadAddRule(cs, nm, ar):
 
 	
 		
-	if cs[nm] == "‚È‚µ":
+	if cs[nm] == "ãªã—":
 	    ae.state = -1
 	elif cs[nm] == "CREATED":
 	    ae.state = OpenRTM_aist.RTC.CREATED_STATE
@@ -190,7 +190,7 @@ def LoadSubRule(cs, nm, sr):
 	    return nm
 
 ##
-#ƒtƒ@ƒCƒ‹‚æ‚èÀs‡˜‚Ì“Ç‚İ‚ŞŠÖ”
+#ãƒ•ã‚¡ã‚¤ãƒ«ã‚ˆã‚Šå®Ÿè¡Œé †åºã®èª­ã¿è¾¼ã‚€é–¢æ•°
 ##
 def LoadMainRule(rs, fName):
 
